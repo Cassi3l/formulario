@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie6 lt-ie7 lt-ie8 lt-ie9 no-js" lang="es">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie7 lt-ie8 lt-ie9 no-js" lang="es">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8 lt-ie9 no-js" lang="es">
+<![endif]-->
+<!--[if (gte IE 9) | !(IE)  ]><!-->
+<html class="no-js" lang="es">
+<!--<![endif]-->
+	<head>
+		<!-- Arriba: hacks para IE ;) -->
+		<title>Formulario de contacto</title>
+		<!--
+			Charset (juego de caracteres para que se vean las tildes, etc)
+		-->
+		<meta charset="UTF-8">
+
+		<!-- 
+			Viewport (la usan los móviles para calcular el ancho de las páginas)
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<!--
+			Referencia a nuestros archivos CSS
+		-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!--
+			Referencia a modernizr (en el head)
+			script.js => encima de </body>, 
+						 para acelerar la carga 
+						 y evitar conflictos con el DOM
+		-->
+		<script type="text/javascript" src="js/modernizr.js"></script>
+
+	</head>
+	<body>
+		<div id="container">
+
+			<!--
+				Aquí pondremos los errores (de existir alguno) 
+			-->
+			<div id="error"></div>
+
+			<!--
+				Definimos el método de envío (POST hace que nuestros datos no se puedan ver desde
+				el navegador, que es lo más seguro), y la URL a la que enviarlo (post.php)
+			-->
+			<form id="formulario" name="formulario" method="POST" action="post.php">
+				<!--
+					El nombre
+				-->
+				<p>
+					<label for="nombre">Nombre<span class="requerido">*</span></label>
+					<input align="right" type="text" name="nombre" id="nombre" required placeholder="Nombre" size="50">
+				</p>
+				<!--
+					El e-mail
+				-->
+				<p>
+					<label for="email">Correo<span class="requerido">*</span></label>
+					<input align="right" type="email" name="email" id="email" placeholder="Tu correo" required size="50">
+				</p>
+				<!--
+				Telefono
+				-->
+				<p>
+					<label for="tel">Tel&eacute;fono</label>
+					<input type="tel" align="right" name="tel" id="tel" size="20">
+				</p>
+				<!--
+					El mensaje
+				-->
+				<p>
+					<label for="mensaje">Mensaje<span class="requerido">*</span></label>
+					<textarea id="mensaje" name="mensaje" placeholder="Asunto" rows="8" required></textarea>
+				</p>
+				<p><span class="requerido">*</span>Campos obligatorios</p>
+				<p class="submit">
+					<input type="submit" id="submit" value="Enviar">
+				</p>
+			</form>
+			<!--
+				Aquí pondremos el mensaje cuando enviemos el mensaje
+			-->
+			<div id="correcto"></div>
+		</div>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
